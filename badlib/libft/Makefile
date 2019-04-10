@@ -6,19 +6,17 @@
 #    By: yrabby <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 15:48:51 by yrabby            #+#    #+#              #
-#    Updated: 2019/04/08 15:47:33 by yrabby           ###   ########.fr        #
+#    Updated: 2019/04/10 14:14:11 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = $(wildcard src1/*.c) \
-	  $(wildcard src2/*.c) \
-	  $(wildcard src3/*.c)
-
-HED = includes
+SRC = $(wildcard *.c) \
 
 FLAG = -Wall -Werror -Wextra
+
+HED = libft.h
 
 all: make_obj
 
@@ -27,7 +25,7 @@ all: make_obj
 .PRECIOUS: $(SRC) $(HED) author
 
 make_obj: $(SRC)
-		@gcc $(FLAG) -c $^ -I $(HED)
+		@gcc $(FLAG) -c $^
 		@ar rv $(NAME) *.o
 		@ranlib $(NAME)
 

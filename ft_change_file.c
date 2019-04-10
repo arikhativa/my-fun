@@ -17,8 +17,8 @@ void	chch(char *s1)
 	char *s2;
 	char *s3;
 	char *s4;
-	char id[] = "\"../includes/libft.h\"";
-	char new[] = "<libft.h>";
+	char id[] = "<stdlib.h>";
+	char new[] = "\"libft.h\"";
 
 	s2 = (char*)malloc(sizeof(char) * BUF);
 	s4 = (char*)malloc(sizeof(char) * BUF);

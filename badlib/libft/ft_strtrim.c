@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 #define SPACE s[n] == ' ' || s[n] == '\n' || s[n] == '\t'
 
 char	*ft_strtrim(const char *s)
