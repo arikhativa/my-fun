@@ -6,7 +6,7 @@
 #    By: yrabby <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 15:48:51 by yrabby            #+#    #+#              #
-#    Updated: 2019/04/10 14:49:34 by yrabby           ###   ########.fr        #
+#    Updated: 2019/04/10 15:36:14 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,13 +71,13 @@ FLAG = -Wall -Werror -Wextra
 
 HED = libft.h
 
-all: make_obj
+all: $(NAME)
 
 .PHONY: clean fclean re all
 
 .PRECIOUS: $(SRC) $(HED) author
 
-make_obj: $(SRC)
+$(NAME): $(SRC)
 		@gcc $(FLAG) -c $^
 		@ar rv $(NAME) *.o
 		@ranlib $(NAME)
