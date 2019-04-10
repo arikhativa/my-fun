@@ -6,7 +6,7 @@
 /*   By: yrabby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 14:14:30 by yrabby            #+#    #+#             */
-/*   Updated: 2019/04/06 14:25:32 by yrabby           ###   ########.fr       */
+/*   Updated: 2019/04/10 15:34:04 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t i;
-	char *p1;
-	const char *p2;
+	size_t		i;
+	char		*p1;
+	const char	*p2;
 
 	p1 = dst;
 	p2 = src;

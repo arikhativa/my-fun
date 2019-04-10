@@ -6,13 +6,13 @@
 /*   By: yrabby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 14:53:55 by yrabby            #+#    #+#             */
-/*   Updated: 2019/04/08 14:53:57 by yrabby           ###   ########.fr       */
+/*   Updated: 2019/04/10 15:33:51 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	count(int n, int i)
+static int		count(int n, int i)
 {
 	while (n != 0)
 	{
@@ -22,18 +22,18 @@ static	int	count(int n, int i)
 	return (i);
 }
 
-static void	putnbr(int n, char *s, int i)
+static void		putnbr(int n, char *s, int i)
 {
 	if (n / 10 != 0)
 		putnbr(n / 10, s, i - 1);
 	s[i] = (n % 10) + '0';
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char *s;
-	int i;
-	int neg;
+	char	*s;
+	int		i;
+	int		neg;
 
 	i = 0;
 	neg = 0;

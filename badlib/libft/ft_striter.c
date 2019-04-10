@@ -6,11 +6,11 @@
 /*   By: yrabby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 12:54:31 by yrabby            #+#    #+#             */
-/*   Updated: 2019/04/07 12:59:20 by yrabby           ###   ########.fr       */
+/*   Updated: 2019/04/10 15:20:30 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char	*s, void (*f)(char *))
+void	ft_striter(char *s, void (*f)(char*))
 {
 	int i;
 

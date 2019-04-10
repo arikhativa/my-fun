@@ -6,15 +6,16 @@
 /*   By: yrabby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 13:51:28 by yrabby            #+#    #+#             */
-/*   Updated: 2019/04/03 13:52:18 by yrabby           ###   ########.fr       */
+/*   Updated: 2019/04/10 15:14:31 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define ALPHA (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9')
+#define AL (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') 
+#define NUM || (c >= '0' && c <= '9')
 
 int		ft_isalnum(char c)
 {
-	if (ALPHA)
+	if (AL NUM)
 		return (1);
 	return (0);
 }

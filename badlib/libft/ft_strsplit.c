@@ -6,13 +6,13 @@
 /*   By: yrabby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 09:58:51 by yrabby            #+#    #+#             */
-/*   Updated: 2019/04/07 11:20:04 by yrabby           ###   ########.fr       */
+/*   Updated: 2019/04/10 15:30:47 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		w_count(const char *s, int n, char c)
+static int		w_count(const char *s, int n, char c)
 {
 	int w;
 
@@ -31,10 +31,10 @@ static	int		w_count(const char *s, int n, char c)
 	return (w);
 }
 
-static	char	*substr(const char *s, int n, char c)
+static char		*substr(const char *s, int n, char c)
 {
-	int l;
-	char *new;
+	int		l;
+	char	*new;
 
 	l = n;
 	while (s[n] != c && s[n])
@@ -48,17 +48,17 @@ static	char	*substr(const char *s, int n, char c)
 	{
 		new[l] = s[n];
 		l++;
-		n++;	
+		n++;
 	}
 	new[l] = '\0';
 	return (new);
 }
 
-char	**ft_strsplit(const char *s, char c)
+char			**ft_strsplit(const char *s, char c)
 {
-	char **ms;
-	int n;
-	int w;
+	char	**ms;
+	int		n;
+	int		w;
 
 	n = 0;
 	while (s[n] == c)
@@ -66,7 +66,7 @@ char	**ft_strsplit(const char *s, char c)
 	w = w_count(s, n, c);
 	ms = (char**)malloc(sizeof(char*) * (w + 1));
 	if (ms == NULL)
-			return (NULL);
+		return (NULL);
 	w = 0;
 	while (s[n])
 	{

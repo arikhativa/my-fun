@@ -6,7 +6,7 @@
 /*   By: yrabby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 09:01:31 by yrabby            #+#    #+#             */
-/*   Updated: 2019/04/07 09:16:16 by yrabby           ###   ########.fr       */
+/*   Updated: 2019/04/10 15:32:00 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ int		ft_strnequ(const char *s1, const char *s2, size_t n)
 	int i;
 
 	i = ft_strncmp(s1, s2, n);
-	(i == 0) ? i = 1 : (i = 0);
+	if (i == 0)
+		i = 1;
+	else
+		i = 0;
 	return (i);
 }
