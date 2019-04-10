@@ -6,7 +6,7 @@
 /*   By: yrabby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 14:36:20 by yrabby            #+#    #+#             */
-/*   Updated: 2019/04/10 15:18:47 by yrabby           ###   ########.fr       */
+/*   Updated: 2019/04/10 15:47:32 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	p1 = dst;
 	p2 = src;
 	i = 0;
-	if ((int)n > ft_strlen(dst))
-		return (dst);
 	while (i < n)
 	{
 		p1[i] = p2[i];
