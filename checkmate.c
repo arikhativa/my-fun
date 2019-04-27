@@ -55,30 +55,15 @@ int		k_ruck(int ac, char **av, t_pis king)
 	int i;
 
 	i = 1;
-	while (i < (ac - 1) && res1 == -1) 
+	while (i < (ac - 1)) 
 	{
-		if ((king.y + i) < (ac))
+		if ((king.y + i) < (ac) && res1 == -1)
 			res1 = id(av[king.y + i][king.x], 'R');
-		i++;
-	}
-	i = 1;
-	while (i < (ac - 1) && res2 == -1) 
-	{
-		if ((king.y - i) >= 1)
+		if ((king.y - i) >= 1 && res2 == -1)
 			res2 = id(av[king.y - i][king.x], 'R');
-		i++;
-	}
-	i = 1;
-	while (i < (ac - 1) && res3 == -1) 
-	{
-		if ((king.x + i) < (ac - 1))
+		if ((king.x + i) < (ac - 1) && res3 == -1)
 			res3 = id(av[king.y][king.x + i], 'R');
-		i++;
-	}
-	i = 1;
-	while (i < (ac - 1) && res4 == -1) 
-	{
-		if ((king.x - i) >= 0)
+		if ((king.x - i) >= 0 && res4 == -1)
 			res4 = id(av[king.y][king.x - i], 'R');
 		i++;
 	}
@@ -95,40 +80,32 @@ int		k_bishop(int ac, char **av, t_pis king)
 	int res3 = -1;
 	int res4 = -1;
 
-	printf("ac  %d\n", ac);
-	printf("x   %d\n", king.x);
-	printf("y   %d\n", king.y);
-
 	i = 1;
-	while (i < (ac -1) && res1 == -1)
+	while (i < (ac - 1))
 	{
-		if (king.x + i < (ac - 1) && king.y + i < ac)
+		if (king.x + i < (ac - 1) && king.y + i < ac && res1 == -1)
 			res1 = id(av[king.y + i][king.x + i], 'B');
-		i++;
-	}
-	i = 1;
-	while (i < (ac - 1) && res2 == -1)
-	{
-		if (king.x - i >= 0 && king.y - i >= 1)
+		if (king.x - i >= 0 && king.y - i >= 1 && res2 == -1)
 			res2 = id(av[king.y - i][king.x - i], 'B');
-		i++;
-	}
-	i = 1;
-	while (i < (ac- 1) && res3 == -1)
-	{
-		if (king.x + i < ac - 1 && king.y - i >= 1)
+		if (king.x + i < ac - 1 && king.y - i >= 1 && res3 == -1)
 			res3 = id(av[king.y - i][king.x + i], 'B');
-		i++;
-	}
-	i = 1;
-	while (i < (ac - 2) && res4 == -1)
-	{
-		if (king.x - i >= 0 && king.y + i < ac)
+		if (king.x - i >= 0 && king.y + i < ac && res4 == -1)
 			res4 = id(av[king.y + i][king.x - i], 'B');
 		i++;
 	}
 	if (res1 == 1 || res2 == 1 || res3 == 1 || res4 == 1)
 		return (1);
+	return (0);
+}
+
+int	k_pon(int ac, char ** av, t_pis king)
+{
+	if (king.x - 1 >= 0 && king.y + 1 < ac)
+		if (av[king.y + 1][king.x - 1] == 'P')
+			return (1);
+	if (king.x + 1 < (ac - 1) && king.y + 1 < ac)
+		if (av[king.y + 1][king.x + 1] == 'P')
+			return (1);
 	return (0);
 }
 
@@ -147,6 +124,8 @@ int		make_line(int ac, char **av, t_pis king)
 	if (k_ruck(ac, av, king))
 		return (1);
 	if (k_bishop(ac, av, king))
+		return (1);
+	if (k_pon(ac, av, king))
 		return (1);
 	return (0);
 }
